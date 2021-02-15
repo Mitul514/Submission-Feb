@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class SplashScreenService : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Shutter Animator")]
+    [SerializeField] Animator animator;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0)) //testing purpose only
+        {
+            ShutterAction();
+        }
+    }
+
+    //Make it Controllable from level loader
+    void ShutterAction()
+    {
+        animator.SetTrigger("Start");
     }
 }
